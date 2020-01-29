@@ -1,0 +1,33 @@
+{% extends 'appliacation/my_base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+<html lang="en">
+{% block head %}
+{{ super() }}
+    <style type="text/css">
+    .scrollabletextbox {
+    height:1500px;
+    width:1140px;
+    font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 82%;
+    overflow:scroll;
+}</style>
+{% endblock %}
+{% block page_content %}
+    <div class="page-header">
+    <h1>this http_method</h1>
+</div>
+    {% if "xjusec" in msg %}
+        <script type="text/javascript">alert("{{ msg }}");</script>
+    {% endif %}
+    <form action={{ url_for('my_web.http_method',status='did') }} method="post">
+    {{ wtf.quick_form(form) }}
+    </form>
+    {% if show=="yes" %}
+        <hr><br><p>All Data:</p><hr><a href="{{ url_for('my_web.tmp') }}" target="__blank">Click Me To View</a><br>
+        <textarea class="scrollabletextbox" name="note">
+                {{ data }}
+        </textarea>
+    {% endif %}
+{% endblock %}
+</body>
+</html>

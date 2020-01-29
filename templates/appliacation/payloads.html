@@ -1,0 +1,21 @@
+{% extends 'appliacation/my_base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+<html lang="en">
+
+{% block page_content %}
+    <div class="page-header">
+    <h1>All Payloads</h1>
+</div>
+<form action={{ url_for('my_web.Payloads') }} , method = POST >
+    {{ wtf.quick_form(form) }}
+</form>
+
+{% for i in lists %}
+            <HR><h1>{{ i }}</h1><HR>
+                <a href = {{ url_for('my_web.GetPayload',payload=i) }} target="__blank"><H3> [ * ] Detail</H3></a>
+                    <br>
+                <br>
+            {% endfor %}
+            {% endblock %}
+</body>
+</html>

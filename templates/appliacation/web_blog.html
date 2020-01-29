@@ -1,0 +1,89 @@
+{% extends 'appliacation/my_base.html' %}
+<html lang="en">
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+/*去掉自带的小三角*/
+        details summary::-webkit-details-marker {
+        display: none;
+}
+
+        /*自定义图标，可用图片或字符,如果使用图片，请把content的值设置成空字符*/
+        /*展开*/
+        .menu summary:before {
+        /*content: "+";
+        /*background: url(../Images/right.png) no-repeat center center;*/ /*收起时的图片*/
+        /*vertical-align: middle;*/
+        }
+
+        /*收起*/
+        .menu[open] summary:before {
+        /*content: "-";
+        /*background: url(../Images/down.png) no-repeat center center;*/ /*展开时的图片*/
+            }
+        </style>
+
+{% endblock %}
+{% block page_content %}
+    {% if "xjusec" in message %}
+        <script type="text/javascript">alert("{{ message }}");</script>
+    {% endif %}
+    <div class="page-header">
+        {% if action=='new' %}
+            {% for i in blogs %}
+            <HR><h1>{{ i }} Blog</h1><HR>
+                {% for num in range(alldata[i]|length) %}
+                <a href = "{{ alldata[i][(num+1)|string]['url'] }}" target="__blank"><H3> [ * ]{{ alldata[i][(num+1)|string]['title'] }}</H3></a>
+                    <br>
+                    {% endfor %}
+                <br>
+            {% endfor %}
+{#            <HR><h1>Ylg Blog</h1><HR>#}
+{#            <HR><h1>Glzgin Blog</h1><HR>#}
+{#            <HR><h1>FreeBuf Blog</h1><HR>#}
+{#            <HR><h1>4Hou Blog</h1><HR>#}
+        {% elif action=='all' %}
+            {% for i in blogs %}
+            <details class="menu" before>
+                <summary><h1>[ * ]{{ i }} Blog</h1><hr></summary>
+                <ul>
+                     {% for num in range(alldata[i]|length ) %}
+                        <li> <a href = "{{ alldata[i][(num+1)|string]['url'] }}" target="__blank"><p> {{ alldata[i][(num+1)|string]['title'] }}</p></a></li>
+                         <br>
+                    {% endfor %}
+                <br>
+                </ul>
+            </details>
+            {% endfor %}
+{#             <details class="menu" before>#}
+{#                <summary><h1>[ * ]Ylg Blog</h1><hr></summary>#}
+{#                <ul>#}
+{#                    <li><a href="#"><h2>子菜单1</h2></a></li>#}
+{#                </ul>#}
+{#            </details>#}
+{#            <details class="menu" before>#}
+{#                <summary><h1>[ * ]Glzgin Blog</h1><hr></summary>#}
+{#                <ul>#}
+{#                    <li><a href="#"><h2>子菜单1</h2></a></li>#}
+{#                </ul>#}
+{#            </details>#}
+{#            </details>#}
+{#            <details class="menu" before>#}
+{#                <summary><h1>[ * ]FreeBuf Blog</h1><hr></summary>#}
+{#                <ul>#}
+{#                    <li><a href="#"><h2>子菜单1</h2></a></li>#}
+{#                </ul>#}
+{#            </details>#}
+{#            </details>#}
+{#            <details class="menu" before>#}
+{#                <summary><h1>[ * ]4Hou Blog</h1><hr></summary>#}
+{#                <ul>#}
+{#                    <li><a href="#"><h2>子菜单1</h2></a></li>#}
+{#                </ul>#}
+{#            </details>#}
+        {% endif %}
+    </div>
+
+{% endblock %}
+</body>
+</html>

