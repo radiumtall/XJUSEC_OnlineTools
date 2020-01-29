@@ -6,7 +6,7 @@
 
     Version：0.1
     Time：2020-01-29
-    Author：RDD @ XJUSEC(新疆大学网络安全协会)
+    Author：RDD @ XJUSEC(新疆大学网络安全兴趣协会)
 
 ---
 
