@@ -1,16 +1,32 @@
+<!-- TOC -->
+
+- [XJUSEC Tools by RDD](#xjusec-tools-by-rdd)
+    - [0.0](#00)
+    - [README](#readme)
+    - [config](#config)
+    - [Run](#run)
+    - [Login](#login)
+    - [Appliaction](#appliaction)
+        - [Blog](#blog)
+        - [XSS](#xss)
+        - [Http](#http)
+        - [Paylaods](#paylaods)
+
+<!-- /TOC -->
+
 # XJUSEC Tools by RDD
 
 ---
 
-##0.0
+## 0.0
 
     Version：0.1
     Time：2020-01-29
-    Author：RDD @ XJUSEC(新疆大学网络安全兴趣协会)
+    Author：RDD @ XJUSEC(新疆大学网络安全协会)
 
 ---
 
-##README
+## README
 
     0x00：这是我学习flask框架的练习作品，仅供学习；
     0x01：主要功能有汇总各个平台和师傅的文章，接收XSS反射，http请求跳板，存储各种常用payload；
@@ -18,24 +34,23 @@
     0x03：代码太乱了，日后会慢慢整理，刚开始做时没想到要做这么多功能，这也吃了没计划的亏；
 ---
 
-##config
+## config
     
     Python3.7
-    Flask
+    Flask   
     Mysql5.0.96
     Windows Or Linux
 
 ---
 
-##Run 
-    
+## Run 
+``` shell
     cd xjusec
     pip install -r req.txt
-    sql 
 	flask run
+```
 
-
-##Login
+## Login
     
     username : admin_rdd
     password : rddhero
@@ -44,9 +59,9 @@
 
 ---
 
-##Appliaction
+## Appliaction
 
-###Blog
+### Blog
     
     0.0：仅web安全相关；
     new blog：查看数据库中最新的博客；
@@ -58,7 +73,7 @@
 
 ![blog](./imgs/blog.png)
 
-###XSS
+### XSS
 
     0.0：提供了接收数据的接口有url，ip，cookie；可以进行拓展；
     0.1：提供了多种查询方式 
@@ -66,13 +81,13 @@
 
 ![blog](./imgs/xss.png)   
 
-###Http
+### Http
 
     可以进行GET和POST请求，个人觉得不是什么重要的功能；
 
 ![blog](./imgs/http.png)
 
-###Paylaods
+### Paylaods
 
     存储了测试用的payload，paylaod存储在./payload，写入文件后会更新，可以进行查询筛选；下个版本可以提供写入paylaod的功能
 
